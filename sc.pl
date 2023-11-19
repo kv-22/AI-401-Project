@@ -1,1 +1,1 @@
-%source code for eye disease diagnosis expert system
+%source code for expert system
