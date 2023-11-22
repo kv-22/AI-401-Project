@@ -1,5 +1,12 @@
 % raw data %
 
+% T1: Conjunctivitis %
+
+conjunctivitis('no','yes','yes','yes','no','yes','yes','Confidence level:', '92.5%' ).
+conjunctivitis('no','yes','yes','yes','no','no','yes','Confidence level:', '91.25%').
+conjunctivitis('no','yes','no','yes','no','yes','yes','Confidence level:', '91.25%').
+conjunctivitis('no','yes','no','yes','no','no','yes','Confidence level:', '90%').
+
 % T2: Farsightedness %
 
 farsightedness('yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'yes', 'Confidence level:', '95%').
@@ -21,6 +28,17 @@ nearsightedness('yes', 'yes', 'no', 'yes', 'no', 'yes', 'no', 'yes', 'yes', 'Con
 nearsightedness('yes', 'yes', 'no', 'yes', 'no', 'no', 'no', 'yes', 'yes', 'Confidence level:', '92.5%').
 nearsightedness('yes', 'yes', 'no', 'no', 'no', 'yes', 'no', 'yes', 'yes', 'Confidence level:', '92.5%').
 nearsightedness('yes', 'yes', 'no', 'no', 'no', 'no', 'no', 'yes', 'yes', 'Confidence level:', '91.25%').
+
+% T5: Cataract %
+
+cataract('no','yes','yes','yes','yes','no','yes','yes','yes','yes','yes','Confidence level:', '92.5%').
+cataract('no','yes','yes','yes','yes','no','yes','yes','no','yes','yes','Confidence level:', '91.25%').
+cataract('no','yes','yes','yes','yes','no','no','yes','yes','yes','yes','Confidence level:', '91.25%').
+cataract('no','yes','yes','yes','yes','no','no','yes','no','yes','yes','Confidence level:', '90%').
+cataract('no','yes','no','yes','yes','no','no','yes','yes','yes','yes','Confidence level:', '90%').
+cataract('no','yes','no','yes','yes','no','yes','yes','no','yes','yes','Confidence level:', '90%').
+cataract('no','yes','no','yes','yes','no','yes','yes','yes','yes','yes','Confidence level:', '91.25%').
+cataract('no','yes','no','yes','yes','no','no','yes','no','yes','yes','Confidence level:', '88.75%').
 
 f1 :- nl,
       writeln("Sorry.."), nl,
