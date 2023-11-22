@@ -120,7 +120,12 @@ t2(S1,S2,S3,S4,S5,S6,S7,S8) :-
 
 close :-
    writeln("We hope our diagnosis was correct and helpful!"),nl,
-   writeln("👁𝓣𝓱𝓪𝓷𝓴 𝔂𝓸𝓾 𝓯𝓸𝓻 𝓾𝓼𝓲𝓷𝓰 𝓔𝔂𝓮𝓔𝔁𝓹𝓮𝓻𝓽!👁"),nl.
+   writeln("👁𝓣𝓱𝓪𝓷𝓴 𝔂𝓸𝓾 𝓯𝓸𝓻 𝓾𝓼𝓲𝓷𝓰 𝓔𝔂𝓮𝓔𝔁𝓹𝓮𝓻𝓽!👁"),nl,
+   writeln("Do you want to exit the program?"), nl,
+   write("Enter yes/no: "),
+   read(Choice),nl,
+   (Choice == 'yes') -> halt; menu.
+   
 
 
 
