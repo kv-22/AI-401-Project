@@ -22,6 +22,18 @@ nearsightedness('yes', 'yes', 'no', 'yes', 'no', 'no', 'no', 'yes', 'yes', 'Conf
 nearsightedness('yes', 'yes', 'no', 'no', 'no', 'yes', 'no', 'yes', 'yes', 'Confidence level:', '92.5%').
 nearsightedness('yes', 'yes', 'no', 'no', 'no', 'no', 'no', 'yes', 'yes', 'Confidence level:', '91.25%').
 
+% T5: Cataract %
+
+cataract('no','yes','yes','yes','yes','no','yes','yes','yes','yes','yes','Confidence level:', '92.5%').
+cataract('no','yes','yes','yes','yes','no','yes','yes','no','yes','yes','Confidence level:', '91.25%').
+cataract('no','yes','yes','yes','yes','no','no','yes','yes','yes','yes','Confidence level:', '91.25%').
+cataract('no','yes','yes','yes','yes','no','no','yes','no','yes','yes','Confidence level:', '90%').
+cataract('no','yes','no','yes','yes','no','no','yes','yes','yes','yes','Confidence level:', '90%').
+cataract('no','yes','no','yes','yes','no','yes','yes','no','yes','yes','Confidence level:', '90%').
+cataract('no','yes','no','yes','yes','no','yes','yes','yes','yes','yes','Confidence level:', '91.25%').
+cataract('no','yes','no','yes','yes','no','no','yes','no','yes','yes','Confidence level:', '88.75%').
+
+
 f1 :- nl,
       writeln("Sorry.."), nl,
       writeln("The disease you have is not in the scope of our domain."), nl,
