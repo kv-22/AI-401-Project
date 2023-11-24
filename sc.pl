@@ -20,22 +20,22 @@ farsightedness('yes', 'yes', 'no', 'no', 'yes', 'no', 'yes', 'yes', 'Confidence 
 
 % T3: Astigmatism %
 
-Astigmatism('yes','yes','yes','yes','no','yes','yes','yes','Confidence level:', '95%' ).
-Astigmatism('yes','yes','yes','yes','no','yes','yes','no','Confidence level:', '93.75%' ).
-Astigmatism('yes','yes','yes','yes','no','no','yes','yes','Confidence level:', '93.75%' ).
-Astigmatism('yes','yes','yes','yes','no','no','yes','no','Confidence level:', '92.5%' ).
-Astigmatism('yes','yes','yes','no','no','yes','yes','yes','Confidence level:', '93.75%' ).
-Astigmatism('yes','yes','yes','no','no','yes','yes','no','Confidence level:', '92.5%' ).
-Astigmatism('yes','yes','yes','no','no','no','yes','yes','Confidence level:', '92.5%' ).
-Astigmatism('yes','yes','yes','no','no','no','yes','no','Confidence level:', '91.25%' ).
-Astigmatism('yes','yes','no','yes','no','yes','yes','yes','Confidence level:', '93.75%' ).
-Astigmatism('yes','yes','no','yes','no','yes','yes','no','Confidence level:', '92.5%' ).
-Astigmatism('yes','yes','no','yes','no','no','yes','yes','Confidence level:', '92.5%' ).
-Astigmatism('yes','yes','no','yes','no','no','yes','no','Confidence level:', '91.25%' ).
-Astigmatism('yes','yes','no','no','no','yes','yes','yes','Confidence level:', '92.5%' ).
-Astigmatism('yes','yes','no','no','no','yes','yes','no','Confidence level:', '91.25%' ).
-Astigmatism('yes','yes','no','no','no','no','yes','yes','Confidence level:', '91.25%' ).
-Astigmatism('yes','yes','no','no','no','no','yes','no','Confidence level:', '90%' ).
+astigmatism('yes','yes','yes','yes','no','yes','yes','yes','Confidence level:', '95%' ).
+astigmatism('yes','yes','yes','yes','no','yes','yes','no','Confidence level:', '93.75%' ).
+astigmatism('yes','yes','yes','yes','no','no','yes','yes','Confidence level:', '93.75%' ).
+astigmatism('yes','yes','yes','yes','no','no','yes','no','Confidence level:', '92.5%' ).
+astigmatism('yes','yes','yes','no','no','yes','yes','yes','Confidence level:', '93.75%' ).
+astigmatism('yes','yes','yes','no','no','yes','yes','no','Confidence level:', '92.5%' ).
+astigmatism('yes','yes','yes','no','no','no','yes','yes','Confidence level:', '92.5%' ).
+astigmatism('yes','yes','yes','no','no','no','yes','no','Confidence level:', '91.25%' ).
+astigmatism('yes','yes','no','yes','no','yes','yes','yes','Confidence level:', '93.75%' ).
+astigmatism('yes','yes','no','yes','no','yes','yes','no','Confidence level:', '92.5%' ).
+astigmatism('yes','yes','no','yes','no','no','yes','yes','Confidence level:', '92.5%' ).
+astigmatism('yes','yes','no','yes','no','no','yes','no','Confidence level:', '91.25%' ).
+astigmatism('yes','yes','no','no','no','yes','yes','yes','Confidence level:', '92.5%' ).
+astigmatism('yes','yes','no','no','no','yes','yes','no','Confidence level:', '91.25%' ).
+astigmatism('yes','yes','no','no','no','no','yes','yes','Confidence level:', '91.25%' ).
+astigmatism('yes','yes','no','no','no','no','yes','no','Confidence level:', '90%' ).
 
 
 % T4: Narsightedness %
