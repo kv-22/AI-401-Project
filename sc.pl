@@ -65,7 +65,7 @@ poorVision(S1) :-
     read(S2), nl,
     ( 
         not(S2 == 'yes'), not(S2 == 'no') -> writeln("Invalid input."), poorVision(S1);
-        (S2 == 'yes') -> eyeStrain(S1,S2); troublesome_eyes(S1,S2)
+        (S2 == 'yes') -> eyeStrain(S1,S2); troublesome_eyes(S2)
     ).
 
 troublesome_eyes(S1):-
