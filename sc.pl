@@ -18,6 +18,26 @@ farsightedness('yes', 'yes', 'no', 'yes', 'yes', 'no', 'yes', 'yes', 'Confidence
 farsightedness('yes', 'yes', 'no', 'no', 'yes', 'yes', 'yes', 'yes', 'Confidence level:', '92.5%').
 farsightedness('yes', 'yes', 'no', 'no', 'yes', 'no', 'yes', 'yes', 'Confidence level:', '91.25%').
 
+% T3: Astigmatism %
+
+Astigmatism('yes','yes','yes','yes','no','yes','yes','yes','Confidence level:', '95%' ).
+Astigmatism('yes','yes','yes','yes','no','yes','yes','no','Confidence level:', '93.75%' ).
+Astigmatism('yes','yes','yes','yes','no','no','yes','yes','Confidence level:', '93.75%' ).
+Astigmatism('yes','yes','yes','yes','no','no','yes','no','Confidence level:', '92.5%' ).
+Astigmatism('yes','yes','yes','no','no','yes','yes','yes','Confidence level:', '93.75%' ).
+Astigmatism('yes','yes','yes','no','no','yes','yes','no','Confidence level:', '92.5%' ).
+Astigmatism('yes','yes','yes','no','no','no','yes','yes','Confidence level:', '92.5%' ).
+Astigmatism('yes','yes','yes','no','no','no','yes','no','Confidence level:', '91.25%' ).
+Astigmatism('yes','yes','no','yes','no','yes','yes','yes','Confidence level:', '93.75%' ).
+Astigmatism('yes','yes','no','yes','no','yes','yes','no','Confidence level:', '92.5%' ).
+Astigmatism('yes','yes','no','yes','no','no','yes','yes','Confidence level:', '92.5%' ).
+Astigmatism('yes','yes','no','yes','no','no','yes','no','Confidence level:', '91.25%' ).
+Astigmatism('yes','yes','no','no','no','yes','yes','yes','Confidence level:', '92.5%' ).
+Astigmatism('yes','yes','no','no','no','yes','yes','no','Confidence level:', '91.25%' ).
+Astigmatism('yes','yes','no','no','no','no','yes','yes','Confidence level:', '91.25%' ).
+Astigmatism('yes','yes','no','no','no','no','yes','no','Confidence level:', '90%' ).
+
+
 % T4: Narsightedness %
 
 nearsightedness('yes', 'yes', 'yes', 'yes', 'no', 'yes', 'no', 'yes', 'yes', 'Confidence level:', '95%').
@@ -104,6 +124,15 @@ tiredEyes(S1,S2,S3,S4) :-
         (S5 == 'yes') -> soreEyes(S1,S2,S3,S4,S5); troubleNightime(S1,S2,S3,S4,S5)
     ).
 
+troubleNightime(S1,S2,S3,S4,S5):-
+    writeln("Do you have trouble seeing things in the nighttime?"),
+    write("Enter yes/no: "),
+    read(S6), nl,
+    (
+        not(S6 == 'yes'), not(S6 == 'no') -> writeln("Invalid input."), troubleNightime(S1,S2,S3,S4,S5);
+        (S6 == 'yes') -> blurryVision(S1,S2,S3,S4,S5,S6); blurryVision(S1,S2,S3,S4,S5,S6)
+    ).
+
 soreEyes(S1,S2,S3,S4,S5) :-
     writeln("Do you have sore eyes?"),
     write("Enter yes/no: "),
@@ -129,6 +158,43 @@ distanceClearly(S1,S2,S3,S4,S5,S6,S7) :-
     (
         not(S8 == 'yes'), not(S8 == 'no') -> writeln("Invalid input."), distanceClearly(S1,S2,S3,S4,S5,S6,S7);
         (S8 == 'yes') -> t2(S1,S2,S3,S4,S5,S6,S7,S8); f1
+    ).
+
+blurryVision(S1,S2,S3,S4,S5,S6):-
+    writeln("Do your vision get very blurry?"),
+    write("Enter yes/no: "),
+    read(S7), nl,
+    (
+        not(S7 == 'yes'), not(S7 == 'no') -> writeln("Invalid input."), blurryVision(S1,S2,S3,S4,S5,S6);
+        (S7 == 'yes') -> needSquint(S1,S2,S3,S4,S5,S6,S7); troubleFar(S1,S2,S3,S4,S5,S6,S7)
+    ).
+
+
+needSquint(S1,S2,S3,S4,S5,S6,S7):-
+    writeln("Do need to squint to focus?"),
+    write("Enter yes/no: "),
+    read(S8), nl,
+    (
+        not(S8 == 'yes'), not(S8 == 'no') -> writeln("Invalid input."), needSquint(S1,S2,S3,S4,S5,S6,S7);
+        (S8 == 'yes') -> t3(S1,S2,S3,S4,S5,S6,S7,S8); t3(S1,S2,S3,S4,S5,S6,S7,S8)
+    ).
+
+troubleFar(S1,S2,S3,S4,S5,S6,S7):-
+    writeln("Do you have trouble seeing things that are far away?"),
+    write("Enter yes/no: "),
+    read(S8), nl,
+    (
+        not(S8 == 'yes'), not(S8 == 'no') -> writeln("Invalid input."), troubleFar(S1,S2,S3,S4,S5,S6,S7);
+        (S8 == 'yes') -> nearbyClearly(S1,S2,S3,S4,S5,S6,S7,S8); f1
+    ).
+
+nearbyClearly(S1,S2,S3,S4,S5,S6,S7,S8):-
+    writeln("Can you see things that are nearby more clearly than things thar are further away?"),
+    write("Enter yes/no: "),
+    read(S8), nl,
+    (
+        not(S8 == 'yes'), not(S8 == 'no') -> writeln("Invalid input."), nearbyClearly(S1,S2,S3,S4,S5,S6,S7,S8);
+        (S8 == 'yes') -> t4(S1,S2,S3,S4,S5,S6,S7,S8,S9); f1
     ).
 
 watery_eyes(S1,S2):-
@@ -229,6 +295,37 @@ t2(S1,S2,S3,S4,S5,S6,S7,S8) :-
    writeln("3."),
    writeln("For people with higher degrees of farsightedness, refractive lens exchange may help."),
    writeln("This surgery replaces your natural lens with an intraocular lens (IOL) to correct your vision."),nl,
+   close.
+
+t3(S1,S2,S3,S4,S5,S6,S7,S8):-
+   writeln("We predict you may have astigmatism."), nl,
+   astigmatism(S1,S2,S3,S4,S5,S6,S7,S8,X,Y), 
+   write(X), 
+   write(Y),
+   nl, nl,
+   writeln("Recommended treatments are mentioned below: "), nl,
+   writeln("1."),
+   writeln("Glasses or contact lenses are the two most popular astigmatism treatments."),
+   writeln("your eye doctor will prescribe the appropriate lenses."),
+   writeln("Astigmatism can also be treated surgically by doctors."),nl,
+   writeln("2."),
+   writeln("Your cornea's shape is altered during surgery to enable proper light focus."),
+   writeln("You might not need treatment if your astigmatism is modest."),
+   writeln("Your eye doctor can advise you on whether you require treatment and he most appropriate course of action."),nl,
+   close.
+
+t4(S1,S2,S3,S4,S5,S6,S7,S8,S9):-
+   writeln("We predict you may have nearsightedness."), nl,
+   nearsightedness(S1,S2,S3,S4,S5,S6,S7,S8,S9,X,Y), 
+   write(X), 
+   write(Y),
+   nl, nl,
+   writeln("Recommended treatments are mentioned below: "), nl,
+   writeln("1."),
+      writeln("It can be treated in both children and adults with glasses or contact lenses."),nl,
+   writeln("2."),
+   writeln("There are also a variety of refractive surgeries."),
+   writeln("for example, LASIK, that can treat nearsightedness in adults alone (with very few exceptions for children)."),nl,   
    close.
 
 t5(S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11):-
