@@ -459,10 +459,17 @@ close :-
    writeln("👁𝓣𝓱𝓪𝓷𝓴 𝔂𝓸𝓾 𝓯𝓸𝓻 𝓾𝓼𝓲𝓷𝓰 𝓔𝔂𝓮𝓔𝔁𝓹𝓮𝓻𝓽!👁"),nl,
    writeln("We would love to hear how we performed! Please leave your valuable feedback via this survey: "),nl,
    writeln("https://eyedisease.surveysparrow.com/s/eyediagnoseEX/tt-e1DmS8i7Bwvk468YMCRbga"),nl,
+   exitProgram.
+
+
+exitProgram :-
    writeln("Do you want to exit the program?"), nl,
    write("Enter yes/no: "),
    read(Choice),nl,
-   not(Choice == 'yes') -> menu.
+   (
+    not(Choice=='yes'), not(Choice=='no') -> writeln("Invalid input."), exitProgram;
+    ((Choice == 'no') -> menu)
+   ).
    
 
 
