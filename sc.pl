@@ -100,8 +100,8 @@ eyeexpert:-nl,
 
 menu:- 
     write('|| Please answer the following questions.. ||'),nl, nl,
-    writeln("Are you experiencing problems with your eyesight?"),nl,
-    writeln('Enter yes/no: '),
+    writeln("Are you experiencing problems with your eyesight?"),
+    write('Enter yes/no: '),
     read(S1),nl,
     (not(S1=='yes' ),not(S1=='no')-> writeln('Invalid Input.'), menu; ( (S1=='yes') -> poorVision(S1) ; troublesome_eyes(S1))).
 
