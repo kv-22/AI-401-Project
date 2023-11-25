@@ -60,6 +60,17 @@ cataract('no','yes','no','yes','yes','no','yes','yes','no','yes','yes','Confiden
 cataract('no','yes','no','yes','yes','no','yes','yes','yes','yes','yes','Confidence level:', '93.75%').
 cataract('no','yes','no','yes','yes','no','no','yes','no','yes','yes','Confidence level:', '91.25%').
 
+% T6: Eye irritation %
+
+irritation('no','yes','yes','no','yes','yes', 'Confidence level: ','95%').
+irritation('no','yes','yes','no','no','yes', 'Confidence level: ','93.75%').
+irritation('no','yes','yes','no','yes','no','Confidence level:' ,'93.75%').
+irritation('no','yes','yes','no','no','no', 'Confidence level: ','92.5%').
+irritation('no','yes','no','no','yes','yes',' Confidence level: ','93.75%').
+irritation('no','yes','no','no','no','yes','Confidence level:' , '92.5%').
+irritation('no','yes','no','no','yes','no','Confidence level: ', '92.5%').
+irritation('no','yes','no','no','no','no', 'Confidence level: ','91.25%').
+
 % T7: Dry Eyes % 
 
 dry_eyes('no','yes', 'yes', 'yes', 'yes', 'yes', 'Confidence level:', '95%').
@@ -78,6 +89,21 @@ f2 :- nl,
       write("NOTE: "),
       writeln("However, if you still feel that you may have an illness please consult with a specialist."), nl,
       close.
+
+eyeexpert:-nl,
+    writeln("") ,nl,
+    writeln("*******************************************************************"),
+    writeln("*********************👁𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓽𝓸 𝓔𝔂𝓮𝓔𝔁𝓹𝓮𝓻𝓽👁********************"),
+    writeln("*******************************************************************"), nl,
+    writeln('Hello I am here to help you 🤍 '),nl,
+    menu.
+
+menu:- 
+    write('|| Please answer the following questions.. ||'),nl, nl,
+    writeln("Are you experiencing problems with your eyesight?"),nl,
+    writeln('Enter yes/no: '),
+    read(S1),nl,
+    (not(S1=='yes' ),not(S1=='no')-> writeln('Invalid Input.'), menu; ( (S1=='yes') -> poorVision(S1) ; troublesome_eyes(S1))).
 
 poorVision(S1) :-
     writeln("Are you only experiencing poor vision?"),
@@ -189,12 +215,12 @@ troubleFar(S1,S2,S3,S4,S5,S6,S7):-
     ).
 
 nearbyClearly(S1,S2,S3,S4,S5,S6,S7,S8):-
-    writeln("Can you see things that are nearby more clearly than things thar are further away?"),
+    writeln("Can you see things that are nearby more clearly than things that are further away?"),
     write("Enter yes/no: "),
-    read(S8), nl,
+    read(S9), nl,
     (
-        not(S8 == 'yes'), not(S8 == 'no') -> writeln("Invalid input."), nearbyClearly(S1,S2,S3,S4,S5,S6,S7,S8);
-        (S8 == 'yes') -> t4(S1,S2,S3,S4,S5,S6,S7,S8,S9); f1
+        not(S9 == 'yes'), not(S9 == 'no') -> writeln("Invalid input."), nearbyClearly(S1,S2,S3,S4,S5,S6,S7,S8);
+        (S9 == 'yes') -> t4(S1,S2,S3,S4,S5,S6,S7,S8,S9); f1
     ).
 
 watery_eyes(S1,S2):-
@@ -212,7 +238,25 @@ itchy_eyes(S1,S2,S3):-
     read(S4),nl,
     (
         not(S4=='yes'),not(S4=='no')->writeln('Invalid Input.'),itchy_eyes(S1,S2,S3);
-        (S4=='yes') -> blurry(S1,S2,S3,S4);secretion(S1,S2,S3,S4)
+        (S4=='yes') -> blurry(S1,S2,S3,S4);discharge_or_secretion(S1,S2,S3,S4)
+    ).
+
+discharge_or_secretion(S1,S2,S3,S4):-
+    writeln("Do you have eye discharge or secretion?"),
+    write("Enter yes/no: "),
+    read(S5),nl,
+    (
+        not(S5=='yes'),not(S5=='no')->writeln('Invalid Input.'),discharge_or_secretion(S1,S2,S3,S4);
+        swelling(S1,S2,S3,S4,S5)
+    ).
+
+swelling(S1,S2,S3,S4,S5):-
+    writeln("Is there swelling in your eyes?"),
+    write("Enter yes/no: "),
+    read(S6),nl,
+    (
+        not(S6=='yes'),not(S6=='no') -> writeln("Invalid Input."),swelling(S1,S2,S3,S4,S5);
+        ((S6=='yes') -> t6(S1,S2,S3,S4,S5,S6) ; t6(S1,S2,S3,S4,S5,S6))
     ).
 
 blurry(S1,S2,S3,S4):-
@@ -222,6 +266,24 @@ blurry(S1,S2,S3,S4):-
     (
         not(S5=='yes'),not(S5=='no')->writeln('Invalid Input.'),blurry(S1,S2,S3,S4);
         (S5=='yes') -> sand(S1,S2,S3,S4,S5);hot(S1,S2,S3,S4,S5)
+    ).
+
+hot(S1,S2,S3,S4,S5):-
+    writeln("Do your see eyes feel hot?"),
+    write("Enter yes/no: "),
+    read(S6),nl,
+    (
+        not(S6=='yes'),not(S6=='no')->writeln('Invalid Input.'),hot(S1,S2,S3,S4,S5);
+        ((S6=='yes') -> opening_difficulty(S1,S2,S3,S4,S5,S6) ; opening_difficulty(S1,S2,S3,S4,S5,S6))
+    ).
+
+opening_difficulty(S1,S2,S3,S4,S5,S6):-
+    writeln("Do you have difficulty opening your eyes when waking up?"),
+    write("Enter yes/no: "),
+    read(S7),nl,
+    (
+        not(S7=='yes'),not(S7=='no') -> writeln("Invalid Input."),opening_difficulty(S1,S2,S3,S4,S5,S6);
+        ((S7=='yes') -> t1(S1,S2,S3,S4,S5,S6,S7) ; f1)
     ).
 
 sand(S1,S2,S3,S4,S5):-
@@ -278,6 +340,23 @@ whitecolor(S1,S2,S3,S4,S5,S6,S7,S8,S9,S10):-
         ((S11=='yes') -> t5(S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11) ; f1)
     ).
 
+t1(S1,S2,S3,S4,S5,S6,S7):-
+    writeln('We predict you might have "Conjunctivitis".'), nl,
+    conjunctivitis(S1,S2,S3,S4,S5,S6,S7,X,Y),
+    write(X), 
+    write(Y),
+    nl, nl, 
+    writeln("Recommended treatments are mentioned below: "), nl,
+    writeln("A strict course of treatment is not needed as the eye heals itself and symptoms clear up in a few weeks, but you can keep the following in mind:"),nl,
+    writeln("1."),
+    writeln("Antibiotic eye drops work the best to clear up the infection."),nl,
+    writeln("2."),
+    writeln("Don't wear contact lenses until fully recovered."),nl,
+    writeln("3."),
+    writeln("Make sure to continuously clean your eyes with a cotton pad soaked in water."),
+    writeln("Wash your hands thoroughly and limit your exposure to others to prevent spreading it."),nl,
+    close.
+
 t2(S1,S2,S3,S4,S5,S6,S7,S8) :-
    writeln('We predict you might have "Farsightedness".'), nl,
    farsightedness(S1,S2,S3,S4,S5,S6,S7,S8,X,Y), 
@@ -298,7 +377,7 @@ t2(S1,S2,S3,S4,S5,S6,S7,S8) :-
    close.
 
 t3(S1,S2,S3,S4,S5,S6,S7,S8):-
-   writeln("We predict you may have astigmatism."), nl,
+   writeln('We predict you might have "Astigmatism".'), nl,
    astigmatism(S1,S2,S3,S4,S5,S6,S7,S8,X,Y), 
    write(X), 
    write(Y),
@@ -306,26 +385,26 @@ t3(S1,S2,S3,S4,S5,S6,S7,S8):-
    writeln("Recommended treatments are mentioned below: "), nl,
    writeln("1."),
    writeln("Glasses or contact lenses are the two most popular astigmatism treatments."),
-   writeln("your eye doctor will prescribe the appropriate lenses."),
-   writeln("Astigmatism can also be treated surgically by doctors."),nl,
+   writeln("Your eye doctor will prescribe the appropriate lenses."),nl,
    writeln("2."),
-   writeln("Your cornea's shape is altered during surgery to enable proper light focus."),
+   writeln("Astigmatism can also be treated surgically by doctors."),
+   writeln("Your cornea's shape is altered during surgery to enable proper light focus."),nl,
    writeln("You might not need treatment if your astigmatism is modest."),
-   writeln("Your eye doctor can advise you on whether you require treatment and he most appropriate course of action."),nl,
+   writeln("Your eye doctor can advise you on whether you require treatment and the most appropriate course of action."),nl,
    close.
 
 t4(S1,S2,S3,S4,S5,S6,S7,S8,S9):-
-   writeln("We predict you may have nearsightedness."), nl,
+   writeln('We predict you might have "Nearsightedness".'), nl,
    nearsightedness(S1,S2,S3,S4,S5,S6,S7,S8,S9,X,Y), 
    write(X), 
    write(Y),
    nl, nl,
    writeln("Recommended treatments are mentioned below: "), nl,
    writeln("1."),
-      writeln("It can be treated in both children and adults with glasses or contact lenses."),nl,
+   writeln("It can be treated in both children and adults with glasses or contact lenses."),nl,
    writeln("2."),
    writeln("There are also a variety of refractive surgeries."),
-   writeln("for example, LASIK, that can treat nearsightedness in adults alone (with very few exceptions for children)."),nl,   
+   writeln("For example, LASIK, that can treat nearsightedness in adults alone (with very few exceptions for children)."),nl,   
    close.
 
 t5(S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11):-
@@ -340,6 +419,23 @@ t5(S1,S2,S3,S4,S5,S6,S7,S8,S9,S10,S11):-
     writeln("The only way to treat cataracts is through surgery. However, you may not require it immediately away."),
     writeln("If the issue is discovered early enough, you might be able to get by with a fresh prescription for your glasses."),
     writeln("Your vision might improve temporarily with a stronger lens."),nl,
+    close.
+
+t6(S1,S2,S3,S4,S5,S6):-
+    writeln('We predict you might have "Eye irritation".'), nl,
+    irritation(S1,S2,S3,S4,S5,S6,X,Y),
+    write(X), 
+    write(Y),
+    nl, nl, 
+    writeln("Recommended treatments are mentioned below: "), nl,
+    writeln("1."),
+    writeln("Clean your hands well before touching the eyes and make sure the tissues used to clean the eyes are clean."),nl,
+    writeln("2."),
+    writeln("Stop using contact lenses and cosmetic products until recovered."),nl,
+    writeln("3."),
+    writeln("The use of eye drops frequently during the day will accelerate the healing."),nl,
+    writeln("The condition will be back to normal within a few days."),
+    writeln("In rare cases the condition can flare up, so the patient should have a consultation with a specialist."),nl,
     close.
 
 t7(S1,S2,S3,S4,S5,S6):-
@@ -361,10 +457,12 @@ t7(S1,S2,S3,S4,S5,S6):-
 close :-
    writeln("We hope our diagnosis was correct and helpful!"),nl,
    writeln("👁𝓣𝓱𝓪𝓷𝓴 𝔂𝓸𝓾 𝓯𝓸𝓻 𝓾𝓼𝓲𝓷𝓰 𝓔𝔂𝓮𝓔𝔁𝓹𝓮𝓻𝓽!👁"),nl,
+   writeln("We would love to hear how we performed! Please leave your valuable feedback via this survey: "),nl,
+   writeln("https://eyedisease.surveysparrow.com/s/eyediagnoseEX/tt-e1DmS8i7Bwvk468YMCRbga"),nl,
    writeln("Do you want to exit the program?"), nl,
    write("Enter yes/no: "),
    read(Choice),nl,
-   (Choice == 'yes') -> halt; menu.
+   not(Choice == 'yes') -> menu.
    
 
 
