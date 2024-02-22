@@ -19,7 +19,7 @@ Keeping these ideas in mind, this project builds a rule-based expert system usin
   * **T6:** Eye irritation 
   * **T7:** Dry eyes 
   * **F1:**
-     * The disease is not in the scope of our domain. 
+     * The disease is not in the scope of the domain. 
      * Incorrect answers were provided to the symptoms, try again! 
   * **F2:**
      * You are a perfect fit! Take care of your beautiful eyes for a healthy life! However, if you still feel that you may have an illness please consult with a specialist.
