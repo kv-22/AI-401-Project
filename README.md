@@ -9,7 +9,7 @@ Keeping these ideas in mind, this project builds a rule-based expert system usin
 * This project was developed collaboratively as part of the AI Principles and Techniques course.
 * The source code of the expert system can be found in the file named “sc.pl” and can be run with SWI Prolog or SWISH Prolog by typing the ‘eyeexpert’ predicate.
 * The control flow of the expert system can be found in the file named “flowchart.pdf”.
-* The flowchart shows the control flow associated with the symptoms of a disease and reaches a treatment it where each disease/treatment is abbreviated as follows:
+* The flowchart shows the control flow associated with the symptoms of a disease and reaches a treatment for it where each disease/treatment is abbreviated as follows:
   
   * **T1:** Conjunctivitis 
   * **T2:** Farsightedness 
